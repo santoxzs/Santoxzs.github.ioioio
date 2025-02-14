@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dias Amando Você 🤍</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,6 +16,7 @@
             margin: 0;
             color: white;
             position: relative;
+            overflow: hidden; /* Impede o conteúdo de sair da tela */
         }
         .container {
             text-align: center;
@@ -43,6 +45,8 @@
             font-size: 2.5rem;
             color: #e74c3c;
             text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
+            font-family: 'Pacifico', cursive;
+            animation: glow 1.5s ease-in-out infinite alternate;
         }
         .countdown {
             font-size: 2rem;
@@ -54,96 +58,74 @@
             color: #e74c3c;
             margin-top: 20px;
             text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+            font-family: 'Dancing Script', cursive;
         }
         .hearts {
-            font-size: 2rem;
+            font-size: 3rem;
             color: red;
             margin-top: 20px;
+            animation: heartbeat 1.5s ease-in-out infinite;
         }
         .sparkle {
             font-size: 2rem;
             color: #ffd700;
+            animation: sparkle 1.5s infinite alternate;
         }
         /* Emojis distribuídos no fundo */
         .emoji {
             position: absolute;
             font-size: 3rem;
             z-index: 0;
+            animation: float 6s ease-in-out infinite;
         }
         /* Corações */
-        .emoji.heart1 { top: 10%; left: 10%; }
-        .emoji.heart2 { top: 20%; right: 5%; }
-        .emoji.heart3 { top: 50%; left: 20%; }
-        .emoji.heart4 { bottom: 10%; right: 10%; }
-        .emoji.heart5 { bottom: 20%; left: 5%; }
-        .emoji.heart6 { top: 70%; left: 30%; }
-        .emoji.heart7 { bottom: 30%; left: 10%; }
-        .emoji.heart8 { top: 60%; right: 20%; }
-        .emoji.heart9 { top: 40%; right: 15%; }
-        .emoji.heart10 { bottom: 40%; left: 40%; }
+        .emoji.heart1 { top: 10%; left: 10%; animation-delay: 0s; }
+        .emoji.heart2 { top: 20%; right: 5%; animation-delay: 1s; }
+        .emoji.heart3 { top: 50%; left: 20%; animation-delay: 2s; }
+        .emoji.heart4 { bottom: 10%; right: 10%; animation-delay: 3s; }
+        .emoji.heart5 { bottom: 20%; left: 5%; animation-delay: 4s; }
+        .emoji.heart6 { top: 70%; left: 30%; animation-delay: 5s; }
+        .emoji.heart7 { bottom: 30%; left: 10%; animation-delay: 6s; }
+        .emoji.heart8 { top: 60%; right: 20%; animation-delay: 7s; }
+        .emoji.heart9 { top: 40%; right: 15%; animation-delay: 8s; }
+        .emoji.heart10 { bottom: 40%; left: 40%; animation-delay: 9s; }
 
-        /* Corações Brancos */
-        .emoji.white1 { top: 30%; left: 50%; }
-        .emoji.white2 { top: 70%; right: 10%; }
-        .emoji.white3 { top: 60%; left: 40%; }
-        .emoji.white4 { bottom: 20%; left: 40%; }
-        .emoji.white5 { bottom: 5%; right: 20%; }
-        .emoji.white6 { top: 10%; left: 80%; }
-        .emoji.white7 { bottom: 30%; right: 5%; }
-        .emoji.white8 { top: 50%; left: 60%; }
-        .emoji.white9 { top: 80%; left: 20%; }
-        .emoji.white10 { bottom: 10%; left: 70%; }
+        /* Animação de brilho */
+        @keyframes sparkle {
+            0% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.1); }
+            100% { opacity: 0.6; transform: scale(1); }
+        }
 
-        /* Brilho */
-        .emoji.sparkle1 { top: 40%; left: 10%; }
-        .emoji.sparkle2 { top: 5%; right: 20%; }
-        .emoji.sparkle3 { top: 80%; left: 30%; }
-        .emoji.sparkle4 { bottom: 30%; right: 30%; }
-        .emoji.sparkle5 { bottom: 40%; left: 50%; }
-        .emoji.sparkle6 { top: 20%; left: 30%; }
-        .emoji.sparkle7 { top: 60%; left: 10%; }
-        .emoji.sparkle8 { bottom: 50%; left: 40%; }
-        .emoji.sparkle9 { top: 70%; right: 15%; }
-        .emoji.sparkle10 { bottom: 10%; left: 60%; }
+        /* Animação de flutuar para os emojis */
+        @keyframes float {
+            0% { transform: translateY(0); opacity: 1; }
+            50% { transform: translateY(-30px); opacity: 0.8; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Efeito de brilho para o título */
+        @keyframes glow {
+            0% { text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5); }
+            50% { text-shadow: 2px 2px 30px rgba(255, 255, 255, 1); }
+            100% { text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5); }
+        }
+
+        /* Efeito de pulsação para os corações */
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
     </style>
 </head>
 <body>
 
-<!-- Emojis distribuídos -->
-<div class="emoji heart1">❤️</div>
-<div class="emoji heart2">❤️</div>
-<div class="emoji heart3">❤️</div>
-<div class="emoji heart4">❤️</div>
-<div class="emoji heart5">❤️</div>
-<div class="emoji heart6">❤️</div>
-<div class="emoji heart7">❤️</div>
-<div class="emoji heart8">❤️</div>
-<div class="emoji heart9">❤️</div>
-<div class="emoji heart10">❤️</div>
-
-<div class="emoji white1">🤍</div>
-<div class="emoji white2">🤍</div>
-<div class="emoji white3">🤍</div>
-<div class="emoji white4">🤍</div>
-<div class="emoji white5">🤍</div>
-<div class="emoji white6">🤍</div>
-<div class="emoji white7">🤍</div>
-<div class="emoji white8">🤍</div>
-<div class="emoji white9">🤍</div>
-<div class="emoji white10">🤍</div>
-
-<div class="emoji sparkle1">✨️</div>
-<div class="emoji sparkle2">✨️</div>
-<div class="emoji sparkle3">✨️</div>
-<div class="emoji sparkle4">✨️</div>
-<div class="emoji sparkle5">✨️</div>
-<div class="emoji sparkle6">✨️</div>
-<div class="emoji sparkle7">✨️</div>
-<div class="emoji sparkle8">✨️</div>
-<div class="emoji sparkle9">✨️</div>
-<div class="emoji sparkle10">✨️</div>
-
+<!-- Música do Spotify -->
 <div class="container">
+    <iframe src="https://open.spotify.com/embed/track/5XeFesFbtLpXzIVDNQP22n" width="300" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
     <div class="image-container">
         <img src="https://github.com/santoxzs/Amor.html/blob/main/IMG-20241203-WA0007.jpg?raw=true" alt="Imagem do casal">
     </div>
@@ -155,6 +137,18 @@
         <div class="sparkle">✨️</div>
     </div>
 </div>
+
+<!-- Emojis distribuídos pelo site -->
+<div class="emoji heart1">❤️</div>
+<div class="emoji heart2">❤️</div>
+<div class="emoji heart3">❤️</div>
+<div class="emoji heart4">❤️</div>
+<div class="emoji heart5">❤️</div>
+<div class="emoji heart6">❤️</div>
+<div class="emoji heart7">❤️</div>
+<div class="emoji heart8">❤️</div>
+<div class="emoji heart9">❤️</div>
+<div class="emoji heart10">❤️</div>
 
 <script>
     const startDate = new Date("September 20, 2024 00:00:00").getTime();
