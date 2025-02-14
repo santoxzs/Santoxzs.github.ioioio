@@ -35,44 +35,6 @@
             border-radius: 10px;
             margin-bottom: 20px;
         }
-        .content {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            font-size: 2.5rem;
-            color: #e74c3c;
-            text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
-            font-family: 'Pacifico', cursive;
-            animation: glow 1.5s ease-in-out infinite alternate;
-        }
-        .countdown {
-            font-size: 2rem;
-            margin-top: 20px;
-            color: #2c3e50;
-        }
-        p {
-            font-size: 1.5rem;
-            color: #e74c3c;
-            margin-top: 20px;
-            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
-            font-family: 'Dancing Script', cursive;
-        }
-        .hearts {
-            font-size: 3rem;
-            color: red;
-            margin-top: 20px;
-            animation: heartbeat 1.5s ease-in-out infinite;
-        }
-        .sparkle {
-            font-size: 2rem;
-            color: #ffd700;
-            animation: sparkle 1.5s infinite alternate;
-        }
-
-        /* Carrossel de imagens */
         .carousel {
             position: relative;
             width: 100%;
@@ -123,17 +85,29 @@
             z-index: 0;
             animation: float 3s ease-in-out infinite;
         }
-        /* Corações */
-        .emoji.heart1 { top: 10%; left: 10%; animation: floatUpDown 2s ease-in-out infinite; }
-        .emoji.heart2 { top: 20%; right: 5%; animation: floatUpDown 3s ease-in-out infinite; }
-        .emoji.heart3 { top: 50%; left: 20%; animation: floatUpDown 4s ease-in-out infinite; }
-        .emoji.heart4 { bottom: 10%; right: 10%; animation: floatUpDown 2s ease-in-out infinite; }
-        .emoji.heart5 { bottom: 20%; left: 5%; animation: floatUpDown 5s ease-in-out infinite; }
-        .emoji.heart6 { top: 70%; left: 30%; animation: floatUpDown 3s ease-in-out infinite; }
-        .emoji.heart7 { bottom: 30%; left: 10%; animation: floatUpDown 4s ease-in-out infinite; }
-        .emoji.heart8 { top: 60%; right: 20%; animation: floatUpDown 6s ease-in-out infinite; }
-        .emoji.heart9 { top: 40%; right: 15%; animation: floatUpDown 7s ease-in-out infinite; }
-        .emoji.heart10 { bottom: 40%; left: 40%; animation: floatUpDown 8s ease-in-out infinite; }
+        /* Corações vermelhos */
+        .emoji.heart1 { top: 10%; left: 10%; animation: floatUpDown 2s ease-in-out infinite; color: red; }
+        .emoji.heart2 { top: 20%; right: 5%; animation: floatUpDown 3s ease-in-out infinite; color: red; }
+        .emoji.heart3 { top: 50%; left: 20%; animation: floatUpDown 4s ease-in-out infinite; color: red; }
+        .emoji.heart4 { bottom: 10%; right: 10%; animation: floatUpDown 2s ease-in-out infinite; color: red; }
+        .emoji.heart5 { bottom: 20%; left: 5%; animation: floatUpDown 5s ease-in-out infinite; color: red; }
+        .emoji.heart6 { top: 70%; left: 30%; animation: floatUpDown 3s ease-in-out infinite; color: red; }
+        .emoji.heart7 { bottom: 30%; left: 10%; animation: floatUpDown 4s ease-in-out infinite; color: red; }
+        .emoji.heart8 { top: 60%; right: 20%; animation: floatUpDown 6s ease-in-out infinite; color: red; }
+        .emoji.heart9 { top: 40%; right: 15%; animation: floatUpDown 7s ease-in-out infinite; color: red; }
+        .emoji.heart10 { bottom: 40%; left: 40%; animation: floatUpDown 8s ease-in-out infinite; color: red; }
+        
+        /* Corações brancos */
+        .emoji.white-heart1 { top: 5%; left: 20%; animation: floatUpDown 3s ease-in-out infinite; color: white; }
+        .emoji.white-heart2 { top: 15%; right: 10%; animation: floatUpDown 4s ease-in-out infinite; color: white; }
+        .emoji.white-heart3 { top: 25%; left: 10%; animation: floatUpDown 6s ease-in-out infinite; color: white; }
+        .emoji.white-heart4 { bottom: 15%; right: 20%; animation: floatUpDown 5s ease-in-out infinite; color: white; }
+        .emoji.white-heart5 { bottom: 25%; left: 15%; animation: floatUpDown 7s ease-in-out infinite; color: white; }
+        .emoji.white-heart6 { top: 60%; left: 30%; animation: floatUpDown 4s ease-in-out infinite; color: white; }
+        .emoji.white-heart7 { bottom: 50%; left: 25%; animation: floatUpDown 3s ease-in-out infinite; color: white; }
+        .emoji.white-heart8 { top: 80%; right: 20%; animation: floatUpDown 6s ease-in-out infinite; color: white; }
+        .emoji.white-heart9 { top: 55%; left: 35%; animation: floatUpDown 4s ease-in-out infinite; color: white; }
+        .emoji.white-heart10 { bottom: 30%; left: 40%; animation: floatUpDown 8s ease-in-out infinite; color: white; }
 
         /* Animação de brilho */
         @keyframes sparkle {
@@ -184,11 +158,11 @@
     </div>
 
     <div class="carousel">
-        <div class="carousel-images">
+        <div class="carousel-images" id="carousel-images">
             <div>
                 <img src="https://github.com/santoxzs/santoxzs.github.io/blob/main/IMG-20250128-WA0023.jpg?raw=true" alt="Imagem 1">
                 <div class="text-overlay">Eu</div>
             </div>
             <div>
                 <img src="https://github.com/santoxzs/Minha-quian-a-/blob/main/IMG_20241203_115037_136.jpg?raw=true" alt="Imagem 2">
-                <div class="text-overlay">Te</
+                <div class="text-overlay">Te</div>
