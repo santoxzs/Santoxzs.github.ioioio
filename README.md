@@ -71,24 +71,69 @@
             color: #ffd700;
             animation: sparkle 1.5s infinite alternate;
         }
+
+        /* Carrossel de imagens */
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .carousel-images img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        .carousel-images .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: white;
+            font-family: 'Pacifico', cursive;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .carousel-button {
+            background-color: rgba(255, 255, 255, 0.6);
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
         /* Emojis distribuídos no fundo */
         .emoji {
             position: absolute;
             font-size: 3rem;
             z-index: 0;
-            animation: float 6s ease-in-out infinite;
+            animation: float 3s ease-in-out infinite;
         }
         /* Corações */
-        .emoji.heart1 { top: 10%; left: 10%; animation-delay: 0s; }
-        .emoji.heart2 { top: 20%; right: 5%; animation-delay: 1s; }
-        .emoji.heart3 { top: 50%; left: 20%; animation-delay: 2s; }
-        .emoji.heart4 { bottom: 10%; right: 10%; animation-delay: 3s; }
-        .emoji.heart5 { bottom: 20%; left: 5%; animation-delay: 4s; }
-        .emoji.heart6 { top: 70%; left: 30%; animation-delay: 5s; }
-        .emoji.heart7 { bottom: 30%; left: 10%; animation-delay: 6s; }
-        .emoji.heart8 { top: 60%; right: 20%; animation-delay: 7s; }
-        .emoji.heart9 { top: 40%; right: 15%; animation-delay: 8s; }
-        .emoji.heart10 { bottom: 40%; left: 40%; animation-delay: 9s; }
+        .emoji.heart1 { top: 10%; left: 10%; animation: floatUpDown 2s ease-in-out infinite; }
+        .emoji.heart2 { top: 20%; right: 5%; animation: floatUpDown 3s ease-in-out infinite; }
+        .emoji.heart3 { top: 50%; left: 20%; animation: floatUpDown 4s ease-in-out infinite; }
+        .emoji.heart4 { bottom: 10%; right: 10%; animation: floatUpDown 2s ease-in-out infinite; }
+        .emoji.heart5 { bottom: 20%; left: 5%; animation: floatUpDown 5s ease-in-out infinite; }
+        .emoji.heart6 { top: 70%; left: 30%; animation: floatUpDown 3s ease-in-out infinite; }
+        .emoji.heart7 { bottom: 30%; left: 10%; animation: floatUpDown 4s ease-in-out infinite; }
+        .emoji.heart8 { top: 60%; right: 20%; animation: floatUpDown 6s ease-in-out infinite; }
+        .emoji.heart9 { top: 40%; right: 15%; animation: floatUpDown 7s ease-in-out infinite; }
+        .emoji.heart10 { bottom: 40%; left: 40%; animation: floatUpDown 8s ease-in-out infinite; }
 
         /* Animação de brilho */
         @keyframes sparkle {
@@ -118,6 +163,13 @@
             100% { transform: scale(1); }
         }
 
+        /* Animação de subida e descida para os corações */
+        @keyframes floatUpDown {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+
     </style>
 </head>
 <body>
@@ -130,44 +182,13 @@
     <div class="image-container">
         <img src="https://github.com/santoxzs/Amor.html/blob/main/IMG-20241203-WA0007.jpg?raw=true" alt="Imagem do casal">
     </div>
-    <div class="content">
-        <h1>Dias Amando Você 🤍</h1>
-        <div class="countdown" id="countdown"></div>
-        <p>Você é tudo para mim, minha mulher da minha vida, eu te amarei para sempre, meu amor 🥺✨️</p>
-        <div class="hearts">❤️🤍</div>
-        <div class="sparkle">✨️</div>
-    </div>
-</div>
 
-<!-- Emojis distribuídos pelo site -->
-<div class="emoji heart1">❤️</div>
-<div class="emoji heart2">❤️</div>
-<div class="emoji heart3">❤️</div>
-<div class="emoji heart4">❤️</div>
-<div class="emoji heart5">❤️</div>
-<div class="emoji heart6">❤️</div>
-<div class="emoji heart7">❤️</div>
-<div class="emoji heart8">❤️</div>
-<div class="emoji heart9">❤️</div>
-<div class="emoji heart10">❤️</div>
-
-<script>
-    const startDate = new Date("September 20, 2024 00:00:00").getTime();
-
-    function updateCountdown() {
-        const now = new Date().getTime();
-        const timeDiff = now - startDate;
-
-        const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
-
-        document.getElementById("countdown").innerHTML = `${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos`;
-    }
-
-    setInterval(updateCountdown, 1000);
-</script>
-
-</body>
-</html>
+    <div class="carousel">
+        <div class="carousel-images">
+            <div>
+                <img src="https://github.com/santoxzs/santoxzs.github.io/blob/main/IMG-20250128-WA0023.jpg?raw=true" alt="Imagem 1">
+                <div class="text-overlay">Eu</div>
+            </div>
+            <div>
+                <img src="https://github.com/santoxzs/Minha-quian-a-/blob/main/IMG_20241203_115037_136.jpg?raw=true" alt="Imagem 2">
+                <div class="text-overlay">Te</
