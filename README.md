@@ -16,7 +16,7 @@
             margin: 0;
             color: white;
             position: relative;
-            overflow: hidden; /* Impede o conteúdo de sair da tela */
+            overflow: hidden;
         }
         .container {
             text-align: center;
@@ -25,34 +25,24 @@
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             width: 90%;
-            max-width: 500px;
+            max-width: 1000px;
             position: relative;
             z-index: 1;
         }
-        .image-container img {
-            width: 100%;
-            max-width: 300px;
-            border-radius: 10px;
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
             margin-bottom: 20px;
         }
-        .carousel {
-            position: relative;
+        .image-container img {
             width: 100%;
-            max-width: 400px;
-            margin: 20px auto;
-            overflow: hidden;
-        }
-        .carousel-images {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-        .carousel-images img {
-            width: 100%;
+            max-width: 220px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             position: relative;
         }
-        .carousel-images .text-overlay {
+        .text-overlay {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -62,22 +52,7 @@
             font-family: 'Pacifico', cursive;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
-        .carousel-buttons {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-        }
-        .carousel-button {
-            background-color: rgba(255, 255, 255, 0.6);
-            border: none;
-            padding: 10px;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-
+        
         /* Emojis distribuídos no fundo */
         .emoji {
             position: absolute;
@@ -109,32 +84,11 @@
         .emoji.white-heart9 { top: 55%; left: 35%; animation: floatUpDown 4s ease-in-out infinite; color: white; }
         .emoji.white-heart10 { bottom: 30%; left: 40%; animation: floatUpDown 8s ease-in-out infinite; color: white; }
 
-        /* Animação de brilho */
-        @keyframes sparkle {
-            0% { opacity: 0.6; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.1); }
-            100% { opacity: 0.6; transform: scale(1); }
-        }
-
         /* Animação de flutuar para os emojis */
         @keyframes float {
             0% { transform: translateY(0); opacity: 1; }
             50% { transform: translateY(-30px); opacity: 0.8; }
             100% { transform: translateY(0); opacity: 1; }
-        }
-
-        /* Efeito de brilho para o título */
-        @keyframes glow {
-            0% { text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5); }
-            50% { text-shadow: 2px 2px 30px rgba(255, 255, 255, 1); }
-            100% { text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5); }
-        }
-
-        /* Efeito de pulsação para os corações */
-        @keyframes heartbeat {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
         }
 
         /* Animação de subida e descida para os corações */
@@ -143,7 +97,6 @@
             50% { transform: translateY(-20px); }
             100% { transform: translateY(0); }
         }
-
     </style>
 </head>
 <body>
@@ -154,15 +107,47 @@
     <iframe src="https://open.spotify.com/embed/track/5XeFesFbtLpXzIVDNQP22n" width="100%" height="380" frameborder="0" allow="encrypted-media"></iframe>
 
     <div class="image-container">
-        <img src="https://github.com/santoxzs/Amor.html/blob/main/IMG-20241203-WA0007.jpg?raw=true" alt="Imagem do casal">
+        <div class="image-item">
+            <img src="https://github.com/santoxzs/santoxzs.github.io/blob/main/IMG-20250128-WA0023.jpg?raw=true" alt="Imagem 1">
+            <div class="text-overlay">Eu</div>
+        </div>
+        <div class="image-item">
+            <img src="https://github.com/santoxzs/Minha-quian-a-/blob/main/IMG_20241203_115037_136.jpg?raw=true" alt="Imagem 2">
+            <div class="text-overlay">Te</div>
+        </div>
+        <div class="image-item">
+            <img src="https://github.com/santoxzs/Minha-quian-a-/blob/main/IMG-20241211-WA0103.jpg?raw=true" alt="Imagem 3">
+            <div class="text-overlay">Amo</div>
+        </div>
+        <div class="image-item">
+            <img src="https://github.com/santoxzs/Minha-quian-a-/blob/main/IMG-20241009-WA0024.jpg?raw=true" alt="Imagem 4">
+            <div class="text-overlay">Muito</div>
+        </div>
     </div>
+</div>
 
-    <div class="carousel">
-        <div class="carousel-images" id="carousel-images">
-            <div>
-                <img src="https://github.com/santoxzs/santoxzs.github.io/blob/main/IMG-20250128-WA0023.jpg?raw=true" alt="Imagem 1">
-                <div class="text-overlay">Eu</div>
-            </div>
-            <div>
-                <img src="https://github.com/santoxzs/Minha-quian-a-/blob/main/IMG_20241203_115037_136.jpg?raw=true" alt="Imagem 2">
-                <div class="text-overlay">Te</div>
+<!-- Emojis no fundo -->
+<div class="emoji heart1">❤️</div>
+<div class="emoji heart2">❤️</div>
+<div class="emoji heart3">❤️</div>
+<div class="emoji heart4">❤️</div>
+<div class="emoji heart5">❤️</div>
+<div class="emoji heart6">❤️</div>
+<div class="emoji heart7">❤️</div>
+<div class="emoji heart8">❤️</div>
+<div class="emoji heart9">❤️</div>
+<div class="emoji heart10">❤️</div>
+
+<div class="emoji white-heart1">🤍</div>
+<div class="emoji white-heart2">🤍</div>
+<div class="emoji white-heart3">🤍</div>
+<div class="emoji white-heart4">🤍</div>
+<div class="emoji white-heart5">🤍</div>
+<div class="emoji white-heart6">🤍</div>
+<div class="emoji white-heart7">🤍</div>
+<div class="emoji white-heart8">🤍</div>
+<div class="emoji white-heart9">🤍</div>
+<div class="emoji white-heart10">🤍</div>
+
+</body>
+</html>
