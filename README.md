@@ -124,7 +124,8 @@
 
 <!-- Música do Spotify -->
 <div class="container">
-    <iframe src="https://open.spotify.com/embed/track/5XeFesFbtLpXzIVDNQP22n" width="300" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    <!-- Player Spotify embutido -->
+    <iframe src="https://open.spotify.com/embed/track/5XeFesFbtLpXzIVDNQP22n" width="100%" height="380" frameborder="0" allow="encrypted-media"></iframe>
 
     <div class="image-container">
         <img src="https://github.com/santoxzs/Amor.html/blob/main/IMG-20241203-WA0007.jpg?raw=true" alt="Imagem do casal">
